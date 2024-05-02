@@ -18,12 +18,16 @@ double Multiplicacao (double num1,double num2){
 
 // Potenciação
 double Potencia(double num1, double num2) {
-    double resultado = 1.0;
-    while(num2 > 0) {
-        resultado *= num1;
-        num2--;
+    if(num2 < 0) {
+        return 1.0 / Potencia(num1, -num2);
+    } else {
+        double resultado = 1.0;
+        while(num2 > 0) {
+            resultado *= num1;
+            num2--;
+        }
+        return resultado;
     }
-    return resultado;
 }
 
 
